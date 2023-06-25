@@ -1,3 +1,15 @@
+# Focus 2 feik ws
+
+## Project setup
+#### nodemon require globally
+```
+npm install (node version 14.17.2)
+```
+
+## start 
+```
+npm start
+```
 <details>
  <summary>OnConnect</summary>
  
