@@ -1,0 +1,113 @@
+[
+  // при коннекте
+  {
+    "condition": {
+      "lastCallAt": 1687644990,
+      "name": "free",
+      "paused": false,
+      "pausedReason": "",
+      "start": 0,
+      "unreachableAt": 0,
+      "updateTs": 0
+    },
+    "event": "condition",
+    "ts": 1687645060
+  },
+  {
+    "event": "userInQueues",
+    "queues": "8994",
+    "ts": 1687645060
+  },
+
+  // Звонок поступил
+  {
+    "condition": {
+      "lastCallAt": 1687644990,
+      "name": "ring",
+      "paused": false,
+      "pausedReason": "",
+      "start": 0,
+      "unreachableAt": 0,
+      "updateTs": 0
+    },
+    "event": "condition",
+    "ts": 1687645306
+  },
+
+  // ответил на звонок
+  {
+    "condition": {
+      "lastCallAt": 1687644990,
+      "name": "talking",
+      "paused": false,
+      "pausedReason": "",
+      "start": 0,
+      "unreachableAt": 0,
+      "updateTs": 0
+    },
+    "event": "condition",
+    "ts": 1687645334
+  },
+  {
+    "event": "openHelper",
+    "olineVar1": "",
+    "olineVar2": "",
+    "olineVar3": "",
+    "phone": "79608705840",
+    "queue": "8994",
+    "ts": 1687645334
+  },
+  {
+    "event": "callStarted",
+    "phone": "79608705840",
+    "text": "Вы приняли вызов",
+    "ts": 1687645334
+  },
+  {
+    "condition": {
+      "lastCallAt": 1687644990,
+      "name": "talking",
+      "paused": false,
+      "pausedReason": "",
+      "start": 1687645337,
+      "unreachableAt": 0,
+      "updateTs": 0
+    },
+    "event": "condition",
+    "ts": 1687645334
+  },
+  
+  // звонок завершен
+  {
+    "condition": {
+      "lastCallAt": 1687645376,
+      "name": "free",
+      "paused": false,
+      "pausedReason": "",
+      "start": 1687645337,
+      "unreachableAt": 0,
+      "updateTs": 0
+    },
+    "event": "condition",
+    "ts": 1687645375
+  },
+  {
+    "event": "callEnded",
+    "phone": "8994",
+    "text": "Вызов завершён",
+    "ts": 1687645375
+  },
+  {
+    "condition": {
+      "lastCallAt": 1687645376,
+      "name": "free",
+      "paused": false,
+      "pausedReason": "",
+      "start": 1687645337,
+      "unreachableAt": 0,
+      "updateTs": 0
+    },
+    "event": "condition",
+    "ts": 1687645375
+  }
+]

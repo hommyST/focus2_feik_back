@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="main.js" defer></script>
+  <title>Управление сокетом</title>
+</head>
+<body>
+  <h1 class="text-center">Управление сокетом</h1>
+  <main>
+    <section class="d-flex">
+      <div class="col">
+        <h4>Подключение</h4>
+        <button data-id="connect">Connect</button>
+      </div>
+      <div class="col">
+        <h4>Звонок в линию</h4>
+        <button data-id="call_in_line">call in line</button>
+      </div>
+    </section>
+
+    <section>
+      <h4>Принял звонок</h4>
+
+      <span class="input">
+        <label for="answer_phone">Телефон</label>
+        <input 
+          type="text" 
+          id="answer_phone" 
+          placeholder="Телефон"
+          value="79608705840"
+        >
+      </span>
+      <span class="input">
+        <label for="answer_queue">Очередь</label>
+        <input 
+          type="text" 
+          id="answer_queue" 
+          placeholder="Очередь"
+          value="8994"
+        >
+      </span> <br>
+      <span class="input">
+        <label for="answer_olineVar1">olineVar1</label>
+        <input 
+          type="text" 
+          id="answer_olineVar1" 
+          placeholder="olineVar1"
+          value=""
+        >
+      </span>
+      <span class="input">
+        <label for="answer_olineVar2">olineVar2</label>
+        <input 
+          type="text" 
+          id="answer_olineVar2" 
+          placeholder="olineVar2"
+          value=""
+        >
+      </span>
+      <span class="input">
+        <label for="answer_olineVar3">olineVar3</label>
+        <input 
+          type="text" 
+          id="answer_olineVar3" 
+          placeholder="olineVar3"
+          value=""
+        >
+      </span>
+
+      <button data-id="answer_call" class="ml-3">Принял звонок</button>
+    </section>
+  </main>
+</body>
+</html>
