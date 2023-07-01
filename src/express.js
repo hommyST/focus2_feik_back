@@ -11,3 +11,4 @@ app.listen(process.env.SERVER_PORT)
 
 
 console.log('Сервер запущен на: ' + process.env.SERVER_PORT + ' порту');
+console.log('http://localhost:' + process.env.SERVER_PORT);

@@ -2,13 +2,16 @@
 
 ## Project setup
 #### nodemon require globally
+#### (node version 14.17.2)
 ```
-npm install (node version 14.17.2)
+npm install 
 ```
-
+#### create .env file
 ## start 
 ```
-npm start
+npm start 
+||
+npm run serve
 ```
 <details>
  <summary>OnConnect</summary>

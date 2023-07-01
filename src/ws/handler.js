@@ -77,6 +77,40 @@ const MESSAGES = {
       "ts": 1687645334
     },
   ],
+  callEnded: [
+    {
+      "condition": {
+        "lastCallAt": 1687645376,
+        "name": "free",
+        "paused": false,
+        "pausedReason": "",
+        "start": 1687645337,
+        "unreachableAt": 0,
+        "updateTs": 0
+      },
+      "event": "condition",
+      "ts": 1687645375
+    },
+    {
+      "event": "callEnded",
+      "phone": "8994",
+      "text": "Вызов завершён",
+      "ts": 1687645375
+    },
+    {
+      "condition": {
+        "lastCallAt": 1687645376,
+        "name": "free",
+        "paused": false,
+        "pausedReason": "",
+        "start": 1687645337,
+        "unreachableAt": 0,
+        "updateTs": 0
+      },
+      "event": "condition",
+      "ts": 1687645375
+    }
+  ],
 }
 
 module.exports = (message, wss) => {
@@ -87,6 +121,10 @@ module.exports = (message, wss) => {
     // Управление
     switch (data.control) {
       case 'connect':
+        MESSAGES.connect.forEach(message => {
+          if ('queues' in message) message.queues = data.queues
+        })
+
         sendToAll(MESSAGES.connect)
         break;
 
@@ -103,16 +141,25 @@ module.exports = (message, wss) => {
           queue: data.queue,
         }
 
-        MESSAGES.answerCall.forEach(data => {
+        MESSAGES.answerCall.forEach(message => {
           for (let key of Object.keys(payload)) {
-            if (key in data) {
-              data[key] = payload[key]
+            if (key in message) {
+              message[key] = payload[key]
             }
           }
         })
 
         sendToAll(MESSAGES.answerCall)
         break;
+
+      case 'end call':
+        MESSAGES.callEnded.forEach(message => {
+          if ('phone' in message) message.phone = data.queue
+        })
+
+        sendToAll(MESSAGES.callEnded)
+        break;
+
     }
 
   } else {

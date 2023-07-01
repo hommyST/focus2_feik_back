@@ -9,16 +9,7 @@ wsServer.on('connection', onConnect);
 
 function onConnect(wsClient) {
   console.log('Новый пользователь');
-  // отправка приветственного сообщения клиенту
-  // wsClient.send(JSON.stringify(
-  //   {
-  //     "event":"userInQueues",
-  //     "queues":"8994",
-  //     "ts":1687643764
-  //   }
-  // ));
 
-  // wsClient.on('message', handler)
   wsClient.on('message', (message) => {
     handler(message, wsServer)
   })

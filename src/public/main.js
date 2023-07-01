@@ -3,6 +3,7 @@ const ws = new WebSocket('ws://localhost:6013')
 const connect = document.querySelector('[data-id="connect"]')
 const callInLine = document.querySelector('[data-id="call_in_line"]')
 const answerCall = document.querySelector('[data-id="answer_call"]')
+const endCall = document.querySelector('[data-id="end_call"]')
 
 ws.onmessage = ev => {
   console.log(JSON.parse(ev.data));
@@ -14,8 +15,11 @@ ws.onclose = ev => {
 
 
 connect.addEventListener('click', () => {
+  const queues = document.querySelector('#connect_queues').value
+
   send({
-    control: 'connect'
+    control: 'connect',
+    queues
   })
 })
 
@@ -39,6 +43,15 @@ answerCall.addEventListener('click', () => {
     olineVar3,
     phone,
     queue,
+  })
+})
+
+endCall.addEventListener('click', () => {
+  const queue = document.querySelector('#end_queue').value
+
+  send({
+    control: 'end call',
+    queue
   })
 })
 

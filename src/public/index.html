@@ -15,6 +15,15 @@
     <section class="d-flex">
       <div class="col">
         <h4>Подключение</h4>
+        <span class="input">
+          <label for="connect_queues">Очереди</label>
+          <input 
+            type="text" 
+            id="connect_queues" 
+            placeholder="Очереди"
+            value="8994,8990"
+          >
+        </span>
         <button data-id="connect">Connect</button>
       </div>
       <div class="col">
@@ -73,6 +82,22 @@
       </span>
 
       <button data-id="answer_call" class="ml-3">Принял звонок</button>
+    </section>
+
+    <section>
+      <h4>Звонок завершён</h4>
+
+      <span class="input">
+        <label for="end_queue">Очередь</label>
+        <input 
+          type="text" 
+          id="end_queue" 
+          placeholder="Очередь"
+          value="8994"
+        >
+      </span>
+
+      <button data-id="end_call">Звонок завершён</button>
     </section>
   </main>
 </body>
