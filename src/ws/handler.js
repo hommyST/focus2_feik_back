@@ -55,7 +55,8 @@ const MESSAGES = {
       "olineVar3": "",
       "phone": "79608705840",
       "queue": "8994",
-      "ts": 1687645334
+      "ts": 1687645334,
+      uid: "1688850178.1310652_1688850178",
     },
     {
       "event": "callStarted",
