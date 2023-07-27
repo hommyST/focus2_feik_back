@@ -1,18 +1,24 @@
-const ws = new WebSocket('ws://localhost:6013')
+let ws = new WebSocket('ws://localhost:6013')
+let reconnectInterval = null
 
 const connect = document.querySelector('[data-id="connect"]')
 const callInLine = document.querySelector('[data-id="call_in_line"]')
 const answerCall = document.querySelector('[data-id="answer_call"]')
 const endCall = document.querySelector('[data-id="end_call"]')
+const wsStatus = document.querySelector('.socket_status')
+
+ws.onopen = ev => {
+  wsStatus.style.setProperty('--status-color', 'green')
+}
+
+ws.onclose = ev => {
+  console.log('socket close ' + ev.wasClean);
+  wsStatus.style.setProperty('--status-color', 'red')
+}
 
 ws.onmessage = ev => {
   console.log(JSON.parse(ev.data));
 }
-
-ws.onclose = ev => {
-  console.log('socket ' + ev.wasClean);
-}
-
 
 connect.addEventListener('click', () => {
   const queues = document.querySelector('#connect_queues').value
