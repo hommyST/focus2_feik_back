@@ -1,5 +1,5 @@
 let ws = new WebSocket('ws://localhost:6013')
-let reconnectInterval = null
+let reconnectInterval = null // FIXME
 
 const connect = document.querySelector('[data-id="connect"]')
 const callInLine = document.querySelector('[data-id="call_in_line"]')

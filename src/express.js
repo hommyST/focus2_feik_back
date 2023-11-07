@@ -10,5 +10,16 @@ app.use(express.static('src/public'))
 app.listen(process.env.SERVER_PORT)
 
 
-console.log('Сервер запущен на: ' + process.env.SERVER_PORT + ' порту');
-console.log('http://localhost:' + process.env.SERVER_PORT);
+console.log(
+  '\x1b[33m'
+  + 'Сервер запущен на: ' 
+  + process.env.SERVER_PORT 
+  + ' порту'
+  + '\x1b[0m'
+)
+console.log(
+  '\x1b[35m'
+  + 'http://localhost:'
+  + process.env.SERVER_PORT
+  + '\x1b[0m'
+)
