@@ -112,6 +112,23 @@ const MESSAGES = {
       "ts": 1687645375
     }
   ],
+  holdСall: [
+    {
+      "condition": {
+        "lastCallAt": 1687645376,
+        "name": "free",
+        "paused": false,
+        "pausedReason": "",
+        "start": 1687645337,
+        "unreachableAt": 0,
+        "updateTs": 0,
+        "holded": false,
+        "holdedStart": null,
+      },
+      "event": "condition",
+      "ts": 1687645375
+    },
+  ]
 }
 
 module.exports = (message, wss) => {
@@ -161,6 +178,15 @@ module.exports = (message, wss) => {
         sendToAll(MESSAGES.callEnded)
         break;
 
+      case 'hold call':
+        MESSAGES.holdСall.forEach(message => {
+          // if ('phone' in message) message.phone = data.queue
+          message.condition.holded = data.holded
+          message.condition.holdedStart = Date.now()
+        })
+
+        sendToAll(MESSAGES.holdСall)
+        break;
     }
 
   } else {

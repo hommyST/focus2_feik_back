@@ -5,6 +5,8 @@ const connect = document.querySelector('[data-id="connect"]')
 const callInLine = document.querySelector('[data-id="call_in_line"]')
 const answerCall = document.querySelector('[data-id="answer_call"]')
 const endCall = document.querySelector('[data-id="end_call"]')
+const holdСall = document.querySelector('[data-id="hold_call"]')
+const holdCallEnd = document.querySelector('[data-id="hold_call_end"]')
 const wsStatus = document.querySelector('.socket_status')
 
 ws.onopen = ev => {
@@ -58,6 +60,20 @@ endCall.addEventListener('click', () => {
   send({
     control: 'end call',
     queue
+  })
+})
+
+holdСall.addEventListener('click', () => {
+  send({
+    control: 'hold call',
+    holded: true
+  })
+})
+
+holdCallEnd.addEventListener('click', () => {
+  send({
+    control: 'hold call',
+    holded: false
   })
 })
 
