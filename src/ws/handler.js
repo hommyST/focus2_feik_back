@@ -183,6 +183,7 @@ module.exports = (message, wss) => {
           // if ('phone' in message) message.phone = data.queue
           message.condition.holded = data.holded
           message.condition.holdedStart = Date.now()
+          message.condition.name = data.holded ? 'pause' : 'talking'
         })
 
         sendToAll(MESSAGES.holdСall)
